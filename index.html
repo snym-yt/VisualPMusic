@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blocklyテスト</title>
+    <title>PMusic</title>
   </head>
   <body>
     <!-- Blocklyのライブラリ -->
@@ -10,16 +10,13 @@
     <script src="javascript_compressed.js"></script>
     <script src="msg/js/en.js"></script>
     <!-- 自作ブロックの定義 -->
-    <script src="myblock.js"></script>
+    <script src="play.js"></script>
     <!-- ワークスペースのエリア -->
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
     <button onclick="doCode()">コードの実行</button>
     <!-- ツールボックスの定義 -->
     <xml id="toolbox">
-      <block type="go_left"></block>
-      <block type="go_right"></block>
-      <block type="go_up"></block>
-      <block type="go_down"></block>
+      <block type="play"></block>
     </xml>
     <script>
       //Blocklyをdivにはめ込み
