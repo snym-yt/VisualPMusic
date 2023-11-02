@@ -9,7 +9,8 @@ Blockly.Blocks['play'] = {
         .setCheck("Number")
         .appendField("during");
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(230);
  this.setTooltip("ノートナンバーの音をduringの間流す");
  this.setHelpUrl("");
