@@ -33,6 +33,7 @@
       <category name="Music">
         <block type="play"></block>
         <block type="random"></block>
+        <block type="custom_test"></block>
       </category>
     </xml>
 
@@ -346,11 +347,32 @@
       </block>
     </xml>
 
-    <script src="blocks/play_block.js"></script>
+    <script src="blocks/js/play_block.js"></script>
     <script src="generators/play.js"></script>
-    <script src="blocks/random_block.js"></script>
-    <script src="generators/random.js"></script>
+    <script src="blocks/js/random_block.js"></script>
+    <script src="generators/random2.js"></script>
+    
     <script src="script.js"></script>
+
+    <script>
+      Blockly.Blocks['custom_test'] = {
+        init: function () {
+          this.appendDummyInput()
+            .appendField("テストの値は")
+            .appendField(new Blockly.FieldNumber(0), "num")
+            .appendField("です");
+          this.setOutput(true, null);
+          this.setColour(230);
+          this.setTooltip("");
+          this.setHelpUrl("");
+        }
+      };
+      Blockly.JavaScript['custom_test'] = function (block) {
+        var number_num = block.getFieldValue('num');
+        var code = number_num;
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };
+    </script>
 
   </body>
 
