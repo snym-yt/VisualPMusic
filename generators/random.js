@@ -1,4 +1,4 @@
-javascript.javascriptGenerator.forBlock['random'] = function(block, generator) {
+Blockly.JavaScript['random'] = function(block, generator) {
   var value_min = generator.valueToCode(block, 'min', javascript.Order.ATOMIC);
   var value_max = generator.valueToCode(block, 'max', javascript.Order.ATOMIC);
   // TODO: Assemble javascript into code variable.
