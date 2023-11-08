@@ -13,14 +13,6 @@ PMusicをビジュアルプログラミングにする．
 
 # PMusic
 
-dclなら以下のGoogle Driveリンクで卒論資料にアクセス可能．
-
-https://drive.google.com/drive/folders/1_SNoQkgZZcq9IfqdRgfXXJrFTYbmeh9d?usp=sharing
-
-[発表スライド(dclのみ)](https://docs.google.com/presentation/d/1ZiXvsOPjmR-Ngi36hlyCKrCXlsRkR0QPS4_HbRrZDgk/edit?usp=sharing)
-
-
-
 ### 実行の仕方
 
 (1)`src/halo`に移動
