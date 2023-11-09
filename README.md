@@ -57,6 +57,8 @@ no prefix parse function for = found
 
 JavaScriptのletについて: https://techplay.jp/column/1619
 
+*VSCodeのプレビューでindex.htmlを開くと，変数ブロックの作成ができないことに注意．
+
 ##### (2)return文
 
 `return 10;`
