@@ -165,6 +165,9 @@ let Array = ["Name", 12, fn(x){ x * x }];
 Array[2](2);  //　4
 ```
 
+[Blocklyの配列のWiki](https://github.com/google/blockly/wiki/Lists)
+「create empty list」，「create list with」，「length of」のみ実装．
+
 ##### (7)ハッシュ
 
 ```
