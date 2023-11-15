@@ -8,9 +8,9 @@ Blockly.Blocks['weibul'] = {
     this.appendValueInput("scale")
         .setCheck("Number")
         .appendField("scale");
-    this.appendValueInput("position")
-        .setCheck("Number")
-        .appendField("position");
+    // this.appendValueInput("position")
+    //     .setCheck("Number")
+    //     .appendField("position");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
