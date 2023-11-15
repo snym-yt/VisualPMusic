@@ -3,9 +3,9 @@ Blockly.Blocks['gauss'] = {
     this.appendDummyInput()
         .appendField("gauss")
         .appendField("number_of_note")
-        .appendField(new Blockly.FieldNumber(0, 0), "num_of_note")
+        .appendField(new Blockly.FieldNumber(0, 0, Infinity, 1), "num_of_note")
         .appendField("ave_of_noteNo")
-        .appendField(new Blockly.FieldNumber(0, 0), "ave_of_noteNo")
+        .appendField(new Blockly.FieldNumber(0, 0, Infinity, 1), "ave_of_noteNo")
         .appendField("var")
         .appendField(new Blockly.FieldNumber(0, 0), "var");
     this.setInputsInline(true);
