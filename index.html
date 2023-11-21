@@ -14,11 +14,44 @@
 
     <div id="content" style="display:flex;">
       <div>
-        <div id="code" style="width: 450px; padding: 1px;"><pre/></div>
+        <div id="code" style="width: 800px; padding: 5px;"><pre/></div>
         <button onclick="runCode();">Run</button>
       </div>
-      <div id="blocklyDiv" style="height: 480px; width: 800px;"></div>
+      <div id="blocklyDiv" style="height: 720px; width: 1100px; padding: 5px"></div>
     </div>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* 横幅が長い場合に改行するためのスタイル */
+        .scroll-container {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            overflow-x: auto; /* 横スクロール可能にする */
+            max-width: 1877px; /* 任意の横幅を指定 */
+            max-height: 500px; /* 任意の縦幅を指定 */
+            border: 1px solid #ccc; /* 枠線を追加（任意） */
+            padding: 10px; /* 任意の余白を指定 */
+        }
+    </style>
+
+    <div class="scroll-container" id="markdown-container">
+      <!-- ここに表示したいマークダウンテキストを記述 -->
+      ### aaa
+      *Lorem ipsum* dolor sit amet, consectetur adipiscing elit. 
+      Curabitur vel quam sit amet ligula volutpat condimentum. 
+      Sed eu orci vel libero varius suscipit. 
+      Nullam condimentum dolor nec efficitur semper. 
+      Integer eget dui vitae quam gravida iaculis.
+    </div>
+
+    <script>
+      // マークダウンをHTMLに変換して表示
+      var markdownContainer = document.getElementById('markdown-container');
+      markdownContainer.innerHTML = marked(markdownContainer.textContent);
+    </script>
 
     <xml id="toolbox" style="display: none">
       <category name="Default">
@@ -407,6 +440,9 @@
     <script src="generators/randwalk.js"></script>
 
     <script src="script.js"></script>
+
+
+
 
 
 
