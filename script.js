@@ -13,13 +13,26 @@ window.setTimeout(function () {
   }
 }, 0);
 
+function translateLoop(code){
+  var forLoopRegex = /for\s*\(\s*var\s+\w+\s*=\s*\d+\s*;\s*\w+\s*<\s*(\d+)\s*;\s*\w+\s*\+\+\s*\)\s*{/g;
+
+  // マッチするすべてのforループを置換
+  code = code.replace(forLoopRegex, 'loop($1){');
+
+  return code;
+}
+
 function myUpdateFunction(event) {
   var code = Blockly.JavaScript.workspaceToCode(workspace);
+
+  code = translateLoop(code);
+
   document.getElementById('code').innerHTML = '<pre class="prettyprint lang-js" style="margin: 0px"><span style="font-size:1.1em">' + code + '</span></pre>';
   PR.prettyPrint();
   backupBlocks();
 }
 workspace.addChangeListener(myUpdateFunction);
+
 
 function backupBlocks() {
   if (!'localStorage' in window) return;
