@@ -56,6 +56,7 @@ no prefix parse function for = found
 ```
 
 JavaScriptのletについて: https://techplay.jp/column/1619
+ただしスコープはこの記事で言うところの関数スコープとなっており，JavaScriptのものと完全に一致はしていない
 
 *VSCodeのプレビューでindex.htmlを開くと，変数ブロックの作成ができないことに注意．
 
