@@ -17,12 +17,12 @@
         <div id="code" style="width: 800px; padding: 5px;"><pre/></div>
         <button onclick="runCode();">Run</button>
       </div>
-      <div id="blocklyDiv" style="height: 720px; width: 1100px; padding: 5px"></div>
+      <div id="blocklyDiv" style="height: 650px; width: 1100px; padding: 5px"></div>
     </div>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
     <style>
         /* 横幅が長い場合に改行するためのスタイル */
         .scroll-container {
@@ -31,27 +31,53 @@
             overflow-wrap: break-word;
             overflow-x: auto; /* 横スクロール可能にする */
             max-width: 1877px; /* 任意の横幅を指定 */
-            max-height: 500px; /* 任意の縦幅を指定 */
+            max-height: 300px; /* 任意の縦幅を指定 */
             border: 1px solid #ccc; /* 枠線を追加（任意） */
             padding: 10px; /* 任意の余白を指定 */
         }
     </style>
 
-    <div class="scroll-container" id="markdown-container">
-      <!-- ここに表示したいマークダウンテキストを記述 -->
-      ### aaa
-      *Lorem ipsum* dolor sit amet, consectetur adipiscing elit. 
-      Curabitur vel quam sit amet ligula volutpat condimentum. 
-      Sed eu orci vel libero varius suscipit. 
-      Nullam condimentum dolor nec efficitur semper. 
-      Integer eget dui vitae quam gravida iaculis.
-    </div>
+<div id="markdown_preview" class="scroll-container">
+  <!-- ここに出力される -->
+</div>
+<script>
+  // 読み込み時に、マークダウンをHTMLに変換して表示
+  window.addEventListener('load', function () {
 
-    <script>
-      // マークダウンをHTMLに変換して表示
-      var markdownContainer = document.getElementById('markdown-container');
-      markdownContainer.innerHTML = marked(markdownContainer.textContent);
-    </script>
+    //`と`の間に、表示したいマークダウンを左詰めで記述する。
+    var text = `
+##### aaa
+*Lorem ipsum* dolor sit amet, consectetur adipiscing elit. 
+Curabitur vel quam sit amet ligula volutpat condimentum. 
+Sed eu orci vel libero varius suscipit. 
+Nullam condimentum dolor nec efficitur semper. 
+Nullam condimentum dolor nec efficitur semper. 
+Integer eget dui vitae quam gravida iaculis.
+- aa
+    - aaaa
+- aa
+
+a
+a
+a
+aa
+a
+
+あ
+
+
+
+
+
+
+あああ
+
+ああ
+`
+    var html = marked(text);
+    document.getElementById('markdown_preview').innerHTML = html;
+  })
+</script>
 
     <xml id="toolbox" style="display: none">
       <category name="Default">
@@ -445,86 +471,6 @@
     <script src="generators/loop.js"></script> -->
 
     <script src="script.js"></script>
-
-
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.2.2/markdown-it.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
-    />
-    <link rel="stylesheet" href="css/style.css"/>
-
-    <!-- マークダウン記述箇所 -->
-    <main class="l-main-editer js-markdown-editer">
-      # h1タイトル
-      
-      ## h2タイトルタイトルタイトルタイトル
-      
-      ### h3タイトルタイトルタイトルタイトル
-      
-      ダミーテキストです。
-      
-      強調したい箇所は**このように強調させる**ことも可能。
-      
-      - リスト1
-      - リスト2
-          - リスト2-1
-          - リスト2-2
-          - リスト2-3
-      - リスト3
-      - リスト4
-      
-      リンクは[リンクテキスト](https://yurukei-career.com/)のように記載。引用ブロックは以下。
-      
-      > 引用ブロックはこのようになる。
-      改行もこのように組み込まれる。
-      
-      ## テーブル
-      
-      | No | 名前 | 年齢 |
-      |---:|----:|:----:|
-      | 1  | 山田 |  24 |
-      | 2  | 田中 |  48 |
-      
-      ---
-      
-      HTMLをそのまま埋め込むことも可能。
-      
-      <h2>HTMLタイプのh2テキストとテーブル</h2>
-      
-      <table>
-        <tr>
-          <th>No</th>
-          <th>名前</th>
-          <th>年齢</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>山田</td>
-          <td>24</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>田中</td>
-          <td>48</td>
-        </tr>
-      </table>
-      
-    </main>
-    <!-- /マークダウン記述箇所 -->
-
-    <footer class="l-footer">
-      <small class="l-footer__small">&copy;&nbsp;yurukei20</small>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.2.2/markdown-it.min.js"></script>
-
-
 
 
 
