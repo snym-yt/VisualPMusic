@@ -14,33 +14,37 @@
 
     <div id="content" style="display:flex;">
       <div>
+        <!-- コード反映欄 -->
         <div id="code" style="width: 800px; padding: 5px;"><pre/></div>
         <button onclick="runCode();">Run</button>
       </div>
+      <!-- ブロック配置欄 -->
       <div id="blocklyDiv" style="height: 650px; width: 1100px; padding: 5px"></div>
     </div>
 
+    <!-- 説明欄 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
-    <style>
-        /* 横幅が長い場合に改行するためのスタイル */
-        .scroll-container {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            overflow-x: auto; /* 横スクロール可能にする */
-            max-width: 1877px; /* 任意の横幅を指定 */
-            max-height: 300px; /* 任意の縦幅を指定 */
-            border: 1px solid #ccc; /* 枠線を追加（任意） */
-            padding: 10px; /* 任意の余白を指定 */
-        }
-    </style>
-
-    <div id="markdown_preview" class="scroll-container">
-      <!-- ここに出力される -->
-    </div>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <div id="markdown_preview" class="scroll-container"> <!-- ここに出力される --> </div>
     <script src="Instruction/inst_markdown.js"></script>
+    
+
+    <img src="figures/NOTE_number.jpeg" width=1000 height=242 alt="MIDI ノートナンバー">
+    <style>
+      .flex{
+          /*コレ追加*/display: flex;
+          border: 1px solid #333;
+      }
+      .flex div{
+          border: 1px solid #333;
+      }
+      </style>
+      <div class="flex">
+          <div class="left">左</div>
+          <div class="right">右</div>
+      </div>
 
     <xml id="toolbox" style="display: none">
       <category name="Default">
@@ -114,9 +118,6 @@
     <script src="blocks/js/randwalk_block.js"></script>
     <script src="generators/randwalk.js"></script>
 
-    <!-- ループは標準のを使って正規表現で書き換える -->
-    <!-- <script src="blocks/js/loop_block.js"></script>
-    <script src="generators/loop.js"></script> -->
 
     <script src="script.js"></script>
 
