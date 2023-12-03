@@ -27,24 +27,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <div id="markdown_preview" class="scroll-container"> <!-- ここに出力される --> </div>
+    <div class="flex-container">
+      <img src="figures/NOTE_number.jpeg" alt="MIDI ノートナンバー">
+      <div class="scroll-container" id="markdown_preview"> <!-- ここに出力される --> </div>
+    </div>
     <script src="Instruction/inst_markdown.js"></script>
-    
 
-    <img src="figures/NOTE_number.jpeg" width=1000 height=242 alt="MIDI ノートナンバー">
-    <style>
-      .flex{
-          /*コレ追加*/display: flex;
-          border: 1px solid #333;
-      }
-      .flex div{
-          border: 1px solid #333;
-      }
-      </style>
-      <div class="flex">
-          <div class="left">左</div>
-          <div class="right">右</div>
-      </div>
+
+
 
     <xml id="toolbox" style="display: none">
       <category name="Default">
@@ -100,6 +90,7 @@
       </block>
     </xml>
 
+    <!-- ブロック追加 -->
     <script src="blocks/js/play_block2.js"></script>
     <script src="generators/play2.js"></script>
 

@@ -4,8 +4,21 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow-x: auto; /* 横スクロール可能にする */
-    max-width: 1000px; /* 任意の横幅を指定 */
+    max-width: 1064px; /* 任意の横幅を指定 */
     max-height: 300px; /* 任意の縦幅を指定 */
     border: 1px solid #ccc; /* 枠線を追加（任意） */
     padding: 10px; /* 任意の余白を指定 */
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container > div {
+    flex: 1; /* 横幅を均等に分ける */
+}
+
+.flex-container > img {
+    max-width: 42.7%; /* 画像が親要素に収まるようにする */
+    height: 42.7%;
 }
