@@ -3,17 +3,21 @@
 
     //`と`の間に、表示したいマークダウンを左詰めで記述する。
     var text = `
-# VisualPMusic
+## MIDIノートナンバー
 
-### MIDIノートナンバー
+PMusicでは鍵盤(音の高さ)を数字で表す[MIDIノートナンバー](https://www.asahi-net.or.jp/~hb9t-ktd/music/Japan/Research/DTM/freq_map.html)を使用している．
+0以上の整数で指定する．(負の値を入力すると自動で0になるように設定されている)
 
-PMusicでは鍵盤を数字で表す[MIDIノートナンバー](https://www.asahi-net.or.jp/~hb9t-ktd/music/Japan/Research/DTM/freq_map.html)を使用している．
+## Common
+##### (1) 条件分岐(if文)
+上の凹みに条件文を，下の凹みに条件が真(True)のときに行ってほしい命令を置く．
+歯車の部分をクリックすると「else if」，「else」を選択することが出来る．
+<img src="figures/if_block.png" width="10%"> <img src="figures/if_example.png" width="30%">
 
-### 構文
+##### (2) [不]等号/不等式
+<img src="figures/equal_inequal_block.png" width="10%">
+<img src="figures/all_equal_inequal.png" width="60%">
 
-##### (1)変数束縛
-
-##### (2)繰り返し
 
 次のように入れ子構造にすることも可能．
 
