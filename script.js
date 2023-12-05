@@ -82,3 +82,36 @@ function getHtml(selector) {
 
   return markdown_text;
 }
+
+
+function setLanguage(lang) {
+  // 言語別のスクリプトのリストを定義
+  const scripts = {
+    ja: [
+      "blocks/js/play_block2.js",
+      "generators/play2.js",
+      "blocks/js/random_block.js",
+      "generators/random.js"
+    ],
+    en: [
+      "blocks/js/custom_test_block.js",
+      "generators/custom_test.js",
+      "blocks/js/gauss_block2.js",
+      "generators/gauss2.js",
+      "blocks/js/weibul_block2.js",
+      "generators/weibul2.js",
+      "blocks/js/randwalk_block.js",
+      "generators/randwalk.js"
+    ]
+  };
+
+  // 言語別にスクリプトを読み込む
+  const scriptList = scripts[lang];
+  if (scriptList) {
+    scriptList.forEach(script => {
+      const scriptElement = document.createElement('script');
+      scriptElement.src = script;
+      document.body.appendChild(scriptElement);
+    });
+  }
+}
