@@ -22,3 +22,12 @@
     max-width: 42.7%; /* 画像が親要素に収まるようにする */
     height: 42.7%;
 }
+
+/* ## の見出しのデザイン設定 */
+h2 {
+    padding: 0rem 0rem;
+    margin-bottom: 0rem;
+    border-bottom: 3px solid #b2d5de;
+    font-weight: bold;
+    font-size: 20px;
+}

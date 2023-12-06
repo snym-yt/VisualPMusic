@@ -95,5 +95,6 @@ loop文は本文を書くところに変数束縛を使用するとエラーが�
 
 `;
     var html = marked(text);
+    console.log(html)
     document.getElementById('markdown_preview').innerHTML = html;
   })
