@@ -12,6 +12,59 @@
 
   <body>
 
+  <!-- 言語選択ポップアップ -->
+  <div class="bg_onetime_popup" id="languagePopup">
+    <div class="onetime_popup">
+      <div class="onetime_popup_title">
+        <span class="onetime_popup_title_close" id="popupCloseButton"></span>
+        <span>言語選択</span>
+      </div>
+      <div class="onetime_popup_content">
+        <p>Choose Language:</p>
+        <button onclick="setLanguage('ja'); closePopup();">日本語</button>
+        <button onclick="setLanguage('en'); closePopup();">English</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function () {
+      const body = document.querySelector('body');
+      const languagePopup = document.getElementById('languagePopup');
+      const popupCloseButton = document.getElementById('popupCloseButton');
+
+      body.classList.add('open_popup');
+
+      // ポップアップを閉じる処理
+      function closePopup() {
+        body.classList.remove('open_popup');
+      }
+
+      // 背景をクリックしたらポップアップを閉じる
+      languagePopup.addEventListener('click', function () {
+        closePopup();
+      });
+
+      // ポップアップ内のクリックイベント伝播を防ぐ
+      languagePopup.querySelector('.onetime_popup').addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+
+      // 閉じるボタンをクリックしたらポップアップを閉じる
+      popupCloseButton.addEventListener('click', function () {
+        closePopup();
+      });
+    }, false);
+
+    function setLanguage(lang) {
+      // 言語切り替えの処理を追加
+      // ここで必要なら言語に応じた処理を実行する
+      console.log('Selected language:', lang);
+    }
+  </script>
+  
+  
+
     <div id="content" style="display:flex;">
       <div>
         <!-- コード反映欄 -->
@@ -36,6 +89,8 @@
     <script src="Instruction/inst_markdown.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js" integrity="sha512-ohlWmsCxOu0bph1om5eDL0jm/83eH09fvqLDhiEdiqfDeJbEvz4FSbeY0gLJSVJwQAp0laRhTXbUQG+ZUuifUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
     <xml id="toolbox" style="display: none">
       <category name="Common">
@@ -90,6 +145,8 @@
         </value>
       </block>
     </xml>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
     <!-- ブロック追加 -->
     <!-- <script src="blocks/js/play_block2.js"></script>

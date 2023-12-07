@@ -105,6 +105,10 @@ function setLanguage(lang) {
     ]
   };
 
+  // すでに読み込まれているスクリプトを一旦削除
+  const existingScripts = document.querySelectorAll('script');
+  existingScripts.forEach(script => script.remove());
+
   // 言語別にスクリプトを読み込む
   const scriptList = scripts[lang];
   if (scriptList) {
@@ -115,3 +119,5 @@ function setLanguage(lang) {
     });
   }
 }
+
+
