@@ -67,23 +67,24 @@ body.open_popup .bg_onetime_popup {
 
 .onetime_popup_title {
     position: relative;
-    padding: 1em 80px;
+    padding: 1em 60px;
     margin: 0px;
     background-color: #3388dd;
     color: #fff;
-    font-size: 32px;
+    font-size: 50px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 .onetime_popup_title_close {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     right: 30px;
     width: 30px;
     height: 30px;
     transform: translateY(-50%);
-    cursor: pointer;
+    cursor: pointer; */
+    display: none;
 }
 .onetime_popup_title_close::before,
 .onetime_popup_title_close::after {
@@ -110,7 +111,8 @@ body.open_popup .bg_onetime_popup {
 
   /* ボタンを大きくするスタイル */
   .languageButton {
-    font-size: 36px;
+    line-height: 1.5;
+    font-size: 50px;
     padding: 10px 20px;
     margin: 5px;
   }
