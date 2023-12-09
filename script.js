@@ -95,20 +95,32 @@ function setLanguage(lang) {
   // 言語別のスクリプトのリストを定義
   const scripts = {
     ja: [
-      "blocks/js/play_block2.js",
-      "generators/play2.js",
-      "blocks/js/random_block.js",
-      "generators/random.js"
+      "Japanese/blocks/js/play_block2.js",
+      "Japanese/generators/play2.js",
+      "Japanese/blocks/js/random_block.js",
+      "Japanese/generators/random.js",
+      "Japanese/blocks/js/custom_test_block.js",
+      "Japanese/generators/custom_test.js",
+      "Japanese/blocks/js/gauss_block2.js",
+      "Japanese/generators/gauss2.js",
+      "Japanese/blocks/js/weibul_block2.js",
+      "Japanese/generators/weibul2.js",
+      "Japanese/blocks/js/randwalk_block.js",
+      "Japanese/generators/randwalk.js"
     ],
     en: [
-      "blocks/js/custom_test_block.js",
-      "generators/custom_test.js",
-      "blocks/js/gauss_block2.js",
-      "generators/gauss2.js",
-      "blocks/js/weibul_block2.js",
-      "generators/weibul2.js",
-      "blocks/js/randwalk_block.js",
-      "generators/randwalk.js"
+      "English/blocks/js/play_block2.js",
+      "English/generators/play2.js",
+      "English/blocks/js/random_block.js",
+      "English/generators/random.js",
+      "English/blocks/js/custom_test_block.js",
+      "English/generators/custom_test.js",
+      "English/blocks/js/gauss_block2.js",
+      "English/generators/gauss2.js",
+      "English/blocks/js/weibul_block2.js",
+      "English/generators/weibul2.js",
+      "English/blocks/js/randwalk_block.js",
+      "English/generators/randwalk.js"
     ]
   };
 
