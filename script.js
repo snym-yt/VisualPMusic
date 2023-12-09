@@ -38,7 +38,6 @@ function backupBlocks() {
   if (!'localStorage' in window) return;
   var xml = Blockly.Xml.workspaceToDom(workspace);
   var text = Blockly.Xml.domToText(xml);
-  //console.log(text);
   window.localStorage.setItem(KEY, text);
 }
 
@@ -83,6 +82,14 @@ function getHtml(selector) {
   return markdown_text;
 }
 
+function closePopup() {
+  console.log('Closing popup');
+  // body.classList.remove('open_popup');
+  const body = document.querySelector('body');
+  if (body) {
+    body.classList.remove('open_popup');
+  }
+}
 
 function setLanguage(lang) {
   // 言語別のスクリプトのリストを定義
