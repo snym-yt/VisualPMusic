@@ -12,11 +12,11 @@ PMusicでは鍵盤(音の高さ)を数字で表す[MIDIノートナンバー](ht
 ##### (1) 条件分岐(if文)
 上の凹みに条件文を，下の凹みに条件が真(True)のときに行ってほしい命令を置く．
 歯車の部分をクリックすると「else if」，「else」を選択することが出来る．
-<img src="figures/if_block.png" width="10%"> <img src="figures/if_example.png" width="30%">
+<img src="Instruction/figures/if_block.png" width="10%"> <img src="Instruction/figures/if_example.png" width="30%">
 
 ##### (2) [不]等号/不等式
-<img src="figures/equal_inequal_block.png" width="10%">
-<img src="figures/all_equal_inequal.png" width="60%">
+<img src="Instruction/figures/equal_inequal_block.png" width="10%">
+<img src="Instruction/figures/all_equal_inequal.png" width="60%">
 
 
 次のように入れ子構造にすることも可能．
