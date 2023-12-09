@@ -9,17 +9,25 @@ PMusicでは鍵盤(音の高さ)を数字で表す[MIDIノートナンバー](ht
 0以上の整数で指定する．(負の値を入力すると自動で0になるように設定されている)
 
 ## Common
-##### (1) 条件分岐(if文)
+##### (1) 数値
+数字で値を入れることが出来る．
+小数，負の数も入れられるが，このブロック一つだけで「2/3」のような分数の形を表現することは出来ない．
+<img src="Instruction/figures/numvalue.png" width="5%">
+<img src="Instruction/figures/numvalue_example.png" width="25%">
+
+##### (2) 条件分岐(if文)
 上の凹みに条件文を，下の凹みに条件が真(True)のときに行ってほしい命令を置く．
 歯車の部分をクリックすると「else if」，「else」を選択することが出来る．
 <img src="Instruction/figures/if_block.png" width="10%"> <img src="Instruction/figures/if_example.png" width="30%">
 
-##### (2) [不]等号/不等式
+##### (3) [不]等号/不等式
+6種類の比較がある．
+プログラミング経験のある人は，ここでの「＝」は「＝＝」であって代入ではないことに注意．
 <img src="Instruction/figures/equal_inequal_block.png" width="10%">
 <img src="Instruction/figures/all_equal_inequal.png" width="60%">
 
 
-次のように入れ子構造にすることも可能．
+##### (3) 数値
 
 loop文は本文を書くところに変数束縛を使用するとエラーが発生して終了してしまっていることに注意．
 

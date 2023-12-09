@@ -32,6 +32,13 @@ h2 {
     font-size: 20px;
 }
 
+h5 {
+    padding: 0rem 0rem;
+    margin-bottom: 0rem;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 /* ポップアップ */
 body.open_popup {
     overflow: hidden;
