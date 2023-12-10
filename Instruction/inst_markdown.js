@@ -3,6 +3,9 @@
 
     //`と`の間に、表示したいマークダウンを左詰めで記述する。
     var text = `
+## 基本的な使い方
+[説明スライド](https://docs.google.com/presentation/d/e/2PACX-1vT1mbMEAce7wPtNiAS6GiqaizWgwW2jgFR0ZFaZSC2VrczMZ1R3cTQyUSI6W9nwaBuXxxajNl4Gl-xy/pub?start=false&loop=false&delayms=3000) (このタブでスライドが開かれます)
+
 ## MIDIノートナンバー
 
 PMusicでは鍵盤(音の高さ)を数字で表す[MIDIノートナンバー](https://www.asahi-net.or.jp/~hb9t-ktd/music/Japan/Research/DTM/freq_map.html)を使用している．
@@ -26,6 +29,11 @@ PMusicでは鍵盤(音の高さ)を数字で表す[MIDIノートナンバー](ht
 <img src="Instruction/figures/equal_inequal_block.png" width="10%">
 <img src="Instruction/figures/all_equal_inequal.png" width="60%">
 
+##### (4) 演算(計算)
+5種類の演算(計算)がある．空いている部分に演算を入れたり，数値ブロックを入れたり出来る．
+<img src="Instruction/figures/Calculation_block.png" width="10%">
+<img src="Instruction/figures/all_calculation.png" width="55%">
+<img src="Instruction/figures/calculation_example.png" width="30%">
 
 ##### (3) 数値
 
