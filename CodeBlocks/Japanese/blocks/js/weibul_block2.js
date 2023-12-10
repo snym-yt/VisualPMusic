@@ -2,10 +2,10 @@ Blockly.Blocks['weibul'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("weibul")
-        .appendField("shape ")
-        .appendField(new Blockly.FieldNumber(0, 0), "shape")
-        .appendField("scale")
-        .appendField(new Blockly.FieldNumber(0, 0, Infinity, 1), "scale");
+        .appendField("分布の形 (小数)")
+        .appendField(new Blockly.FieldNumber(2.5, 0), "shape")
+        .appendField("ピークの位置 (自然数)")
+        .appendField(new Blockly.FieldNumber(60, 0, Infinity, 1), "scale");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
