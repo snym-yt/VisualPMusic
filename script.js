@@ -95,32 +95,32 @@ function setLanguage(lang) {
   // 言語別のスクリプトのリストを定義
   const scripts = {
     ja: [
-      "Japanese/blocks/js/play_block2.js",
-      "Japanese/generators/play2.js",
-      "Japanese/blocks/js/random_block.js",
-      "Japanese/generators/random.js",
-      "Japanese/blocks/js/custom_test_block.js",
-      "Japanese/generators/custom_test.js",
-      "Japanese/blocks/js/gauss_block2.js",
-      "Japanese/generators/gauss2.js",
-      "Japanese/blocks/js/weibul_block2.js",
-      "Japanese/generators/weibul2.js",
-      "Japanese/blocks/js/randwalk_block.js",
-      "Japanese/generators/randwalk.js"
+      "CodeBlocks/Japanese/blocks/js/play_block2.js",
+      "CodeBlocks/Japanese/generators/play2.js",
+      "CodeBlocks/Japanese/blocks/js/random_block.js",
+      "CodeBlocks/Japanese/generators/random.js",
+      "CodeBlocks/Japanese/blocks/js/custom_test_block.js",
+      "CodeBlocks/Japanese/generators/custom_test.js",
+      "CodeBlocks/Japanese/blocks/js/gauss_block2.js",
+      "CodeBlocks/Japanese/generators/gauss2.js",
+      "CodeBlocks/Japanese/blocks/js/weibul_block2.js",
+      "CodeBlocks/Japanese/generators/weibul2.js",
+      "CodeBlocks/Japanese/blocks/js/randwalk_block.js",
+      "CodeBlocks/Japanese/generators/randwalk.js"
     ],
     en: [
-      "English/blocks/js/play_block2.js",
-      "English/generators/play2.js",
-      "English/blocks/js/random_block.js",
-      "English/generators/random.js",
-      "English/blocks/js/custom_test_block.js",
-      "English/generators/custom_test.js",
-      "English/blocks/js/gauss_block2.js",
-      "English/generators/gauss2.js",
-      "English/blocks/js/weibul_block2.js",
-      "English/generators/weibul2.js",
-      "English/blocks/js/randwalk_block.js",
-      "English/generators/randwalk.js"
+      "CodeBlocks/English/blocks/js/play_block2.js",
+      "CodeBlocks/English/generators/play2.js",
+      "CodeBlocks/English/blocks/js/random_block.js",
+      "CodeBlocks/English/generators/random.js",
+      "CodeBlocks/English/blocks/js/custom_test_block.js",
+      "CodeBlocks/English/generators/custom_test.js",
+      "CodeBlocks/English/blocks/js/gauss_block2.js",
+      "CodeBlocks/English/generators/gauss2.js",
+      "CodeBlocks/English/blocks/js/weibul_block2.js",
+      "CodeBlocks/English/generators/weibul2.js",
+      "CodeBlocks/English/blocks/js/randwalk_block.js",
+      "CodeBlocks/English/generators/randwalk.js"
     ]
   };
 
