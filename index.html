@@ -31,10 +31,7 @@
     window.addEventListener('load', function () {
       const body = document.querySelector('body');
       const languagePopup = document.getElementById('languagePopup');
-      // const popupCloseButton = document.getElementById('popupCloseButton');
-
       body.classList.add('open_popup');
-
       // ポップアップ内のクリックイベント伝播を防ぐ
       languagePopup.querySelector('.onetime_popup').addEventListener('click', function (e) {
         e.stopPropagation();
@@ -149,9 +146,6 @@
 
 
     <script src="script.js"></script>
-
-    <button onclick="setLanguage('ja');">日本語</button>
-    <button onclick="setLanguage('en');">English</button>
 
 
   </body>
