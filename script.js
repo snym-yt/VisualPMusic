@@ -13,6 +13,17 @@ window.setTimeout(function () {
   }
 }, 0);
 
+function translateLet(code){
+  var DefLetRegex = /(\D\w*) = (\d+)/g;
+  var DeleteDeclaration = /var .+;/g;
+
+  // マッチするすべてのforループを置換
+  code = code.replace(DefLetRegex, 'let $1 = $2');
+  code = code.replace(DeleteDeclaration, '');
+
+  return code;
+}
+
 function translateLoop(code){
   var forLoopRegex = /for\s*\(\s*var\s+\w+\s*=\s*\d+\s*;\s*\w+\s*<\s*(\d+)\s*;\s*\w+\s*\+\+\s*\)\s*{/g;
 
@@ -26,6 +37,7 @@ function myUpdateFunction(event) {
   var code = Blockly.JavaScript.workspaceToCode(workspace);
 
   code = translateLoop(code);
+  code = translateLet(code);
 
   document.getElementById('code').innerHTML = '<pre class="prettyprint lang-js" style="margin: 0px"><span style="font-size:1.1em">' + code + '</span></pre>';
   PR.prettyPrint();
