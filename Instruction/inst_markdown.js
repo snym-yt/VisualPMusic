@@ -6,11 +6,6 @@
 ## 基本的な使い方
 [説明スライド](https://docs.google.com/presentation/d/e/2PACX-1vT1mbMEAce7wPtNiAS6GiqaizWgwW2jgFR0ZFaZSC2VrczMZ1R3cTQyUSI6W9nwaBuXxxajNl4Gl-xy/pub?start=false&loop=false&delayms=3000) (このタブでスライドが開かれます)
 
-## MIDIノートナンバー
-
-PMusicでは鍵盤(音の高さ)を数字で表す[MIDIノートナンバー](https://www.asahi-net.or.jp/~hb9t-ktd/music/Japan/Research/DTM/freq_map.html)を使用している．
-0以上の整数で指定する．(負の値を入力すると自動で0になるように設定されている)
-
 ## Common
 ##### (1) 数値
 数字で値を入れることが出来る．
