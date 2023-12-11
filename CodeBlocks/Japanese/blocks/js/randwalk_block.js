@@ -10,7 +10,7 @@ Blockly.Blocks['randwalk'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
- this.setTooltip("");
+ this.setTooltip("指定した最初の音の高さから，少しずつランダムに高さを変えていって指定の数だけ音を生成");
  this.setHelpUrl("");
   }
 };

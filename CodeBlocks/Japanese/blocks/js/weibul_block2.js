@@ -10,7 +10,7 @@ Blockly.Blocks['weibul'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
- this.setTooltip("get note from weibul distributiom which is made of arguments");
+ this.setTooltip("指定した分布の形とピークの位置で出来るワイブル分布からランダムに音を生成");
  this.setHelpUrl("");
   }
 };
