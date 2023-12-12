@@ -10,7 +10,7 @@ Blockly.Blocks['randwalk'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
- this.setTooltip("");
+ this.setTooltip("Generates the number of notes specified by `num of note`, randomly varying the height of the note from the height specified by `start note No.`.");
  this.setHelpUrl("");
   }
 };

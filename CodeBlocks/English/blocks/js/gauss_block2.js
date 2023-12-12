@@ -12,7 +12,7 @@ Blockly.Blocks['gauss'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
- this.setTooltip("引数で指定した平均値と分散のガウス分布から指定した個数の音をランダムに取得する");
+ this.setTooltip("Randomly obtains the specified number of sounds from a Gaussian distribution consisting of the mean and variance specified by the argument.");
  this.setHelpUrl("");
   }
 };

@@ -10,7 +10,7 @@ Blockly.Blocks['play'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
- this.setTooltip("ノートナンバーの音をduringの間流す");
+ this.setTooltip("Play the note number specified by the argument for the duration of `during` sec.");
  this.setHelpUrl("");
   }
 };
