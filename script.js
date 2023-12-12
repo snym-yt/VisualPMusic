@@ -14,8 +14,8 @@ window.setTimeout(function () {
 }, 0);
 
 function translateLet(code){
-  var DefLetRegex = /(\D\w*) = (\d+)/g;
-  var DeleteDeclaration = /var .+;/g;
+  var DefLetRegex = /([A-Za-z]\w*) = (\d+)/g;
+  var DeleteDeclaration = /var .+;\n+/g;
 
   // マッチするすべてのforループを置換
   code = code.replace(DefLetRegex, 'let $1 = $2');
