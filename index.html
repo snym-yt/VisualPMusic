@@ -43,107 +43,82 @@
   
   
 
-    <div id="content" style="display:flex;">
-      <div>
-        <!-- コード反映欄 -->
-        <div id="code" style="width: 800px; padding: 5px; border: 2px solid black;"><pre/></div>
-        <button onclick="runCode();">Run</button>
-      </div>
-      <!-- ブロック配置欄 -->
-      <div id="blocklyDiv" style="height: 650px; width: 1100px; padding: 5px"></div>
+  <div id="content" style="display:flex;">
+    <div>
+      <!-- コード反映欄 -->
+      <div id="code" style="width: 800px; padding: 5px; border: 2px solid black;"><pre/></div>
+      <button onclick="runCode();">Run</button>
     </div>
+    <!-- ブロック配置欄 -->
+    <div id="blocklyDiv" style="height: 650px; width: 1100px; padding: 5px"></div>
+  </div>
 
-    <!-- 説明欄 -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script> -->
-    <script src="./marked-3.0.7/marked.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- MIDIノートナンバーの画像 -->
-    <div class="flex-container">
-      <img src="Instruction/figures/NOTE_number.jpeg" alt="MIDI ノートナンバー">
-      <div class="scroll-container" id="markdown_preview"> <!-- ここに出力される --> </div>
-    </div>
-    <script src="Instruction/inst_markdown.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js" integrity="sha512-ohlWmsCxOu0bph1om5eDL0jm/83eH09fvqLDhiEdiqfDeJbEvz4FSbeY0gLJSVJwQAp0laRhTXbUQG+ZUuifUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- 説明欄 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script> -->
+  <script src="./marked-3.0.7/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- MIDIノートナンバーの画像 -->
+  <div class="flex-container">
+    <img src="Instruction/figures/NOTE_number.jpeg" alt="MIDI ノートナンバー">
+    <div class="scroll-container" id="markdown_preview"> <!-- ここに出力される --> </div>
+  </div>
+  <script src="Instruction/inst_markdown.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js" integrity="sha512-ohlWmsCxOu0bph1om5eDL0jm/83eH09fvqLDhiEdiqfDeJbEvz4FSbeY0gLJSVJwQAp0laRhTXbUQG+ZUuifUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
-    <xml id="toolbox" style="display: none">
-      <category name="Common">
-        <block type="controls_if"></block>
-        <!-- <block type="controls_repeat_ext"></block> -->
-        <block type="logic_compare"></block>
-        <block type="math_number"></block>
-        <block type="math_arithmetic"></block>
-        <!-- <block type="text"></block>
-        <block type="text_print"></block> -->
-      </category>
+  <xml id="toolbox" style="display: none">
+    <category name="Common">
+      <block type="controls_if"></block>
+      <!-- <block type="controls_repeat_ext"></block> -->
+      <block type="logic_compare"></block>
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <!-- <block type="text"></block>
+      <block type="text_print"></block> -->
+    </category>
 
-      <category name="Music" colour="0">
-        <block type="play"></block>
-        <!-- <block type="random"></block> -->
-        <block type="gauss"></block>
-        <block type="weibul"></block>
-        <block type="randwalk"></block>
-      </category>
+    <category name="Music" colour="0">
+      <block type="play"></block>
+      <!-- <block type="random"></block> -->
+      <block type="gauss"></block>
+      <block type="weibul"></block>
+      <block type="randwalk"></block>
+    </category>
 
-      <category name="Loops" colour="120">
-        <block type="controls_repeat_ext">
-          <value name="TIMES">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="controls_whileUntil"></block>
-        <!-- <block type="loop"></block> -->
-      </category>
-
-
-      <category name="Variables" colour="330" custom="VARIABLE"></category>
-
-      <category name="Lists" colour="260">
-        <block type="lists_create_with">
-          <mutation items="0"></mutation>
-        </block>
-        <block type="lists_create_with"></block>
-        <block type="lists_length"></block>
-      </category>
-    </xml>
-
-    <!-- <xml id="startBlocks" style="display: none">
-      <block type="text_print" id="0@)u5QVs/@*zX^XXw%Lp" x="35" y="21">
-        <value name="TEXT">
-          <shadow type="text" id="=[)BkyD!BK*AF%PcBi9;">
-            <field name="TEXT">Hello, World</field>
+    <category name="Loops" colour="120">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
           </shadow>
         </value>
       </block>
-    </xml> -->
+      <block type="controls_whileUntil"></block>
+      <!-- <block type="loop"></block> -->
+    </category>
+
+
+    <category name="Variables" colour="330" custom="VARIABLE"></category>
+
+    <category name="Lists" colour="260">
+      <block type="lists_create_with">
+        <mutation items="0"></mutation>
+      </block>
+      <block type="lists_create_with"></block>
+      <block type="lists_length"></block>
+    </category>
+  </xml>
+
+  <xml id="startBlocks" style="display: none">
+    <block type="controls_repeat_ext" x="20" y="20"></block>
+  </xml>
+
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
-
-    <!-- ブロック追加 -->
-    <!-- <script src="blocks/js/play_block2.js"></script>
-    <script src="generators/play2.js"></script>
-
-    <script src="blocks/js/random_block.js"></script>
-    <script src="generators/random.js"></script>
-
-    <script src="blocks/js/custom_test_block.js"></script>
-    <script src="generators/custom_test.js"></script>
-
-    <script src="blocks/js/gauss_block2.js"></script>
-    <script src="generators/gauss2.js"></script>
-
-    <script src="blocks/js/weibul_block2.js"></script>
-    <script src="generators/weibul2.js"></script>
-
-    <script src="blocks/js/randwalk_block.js"></script>
-    <script src="generators/randwalk.js"></script> -->
-
 
     <script src="script.js"></script>
 

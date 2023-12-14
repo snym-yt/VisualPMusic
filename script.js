@@ -1,3 +1,12 @@
+// カテゴリ名の辞書（キーは英語、値は日本語）
+const categoryNames = {
+  'Common': '共通',
+  'Music': '音楽',
+  'Loops': 'ループ',
+  'Variables': '変数',
+  'Lists': 'リスト'
+};
+
 var KEY = 'BlocklyStorage';
 
 var workspace = Blockly.inject('blocklyDiv', {
@@ -9,7 +18,11 @@ window.setTimeout(function () {
   if ('localStorage' in window && window.localStorage[KEY]) {
     restoreBlocks();
   } else {
-    Blockly.Xml.domToWorkspace(document.querySelector('#startBlocks'), workspace);
+    // Blockly.Xml.domToWorkspace(document.querySelector('#startBlocks'), workspace);
+    var startBlocksText = document.getElementById('startBlocks').outerHTML;
+    var xml = Blockly.Xml.textToDom(startBlocksText);
+    Blockly.Xml.domToWorkspace(xml, workspace);
+    myUpdateFunction();
   }
 }, 0);
 
