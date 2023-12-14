@@ -1,12 +1,3 @@
-// カテゴリ名の辞書（キーは英語、値は日本語）
-const categoryNames = {
-  'Common': '共通',
-  'Music': '音楽',
-  'Loops': 'ループ',
-  'Variables': '変数',
-  'Lists': 'リスト'
-};
-
 var KEY = 'BlocklyStorage';
 
 var workspace = Blockly.inject('blocklyDiv', {
@@ -46,11 +37,21 @@ function translateLoop(code){
   return code;
 }
 
+function translatePlay(code){
+  var playRegex = /play\((.+), (\d+)\)/g;
+
+  // マッチするすべてのforループを置換
+  code = code.replace(playRegex, 'play($1, $2.0)');
+
+  return code;
+}
+
 function myUpdateFunction(event) {
   var code = Blockly.JavaScript.workspaceToCode(workspace);
 
   code = translateLoop(code);
   code = translateLet(code);
+  code = translatePlay(code)
 
   document.getElementById('code').innerHTML = '<pre class="prettyprint lang-js" style="margin: 0px"><span style="font-size:1.1em">' + code + '</span></pre>';
   PR.prettyPrint();

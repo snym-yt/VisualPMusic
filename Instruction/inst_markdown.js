@@ -3,6 +3,16 @@
 
     //`と`の間に、表示したいマークダウンを左詰めで記述する。
     var text = `
+## 目次
+[1] 基本的な使い方
+[2] Common
+  (1) 数値
+  (2) 条件分岐(if文)
+  (3) [不]等号/不等式
+  (4) 演算(計算)
+[3]Music
+  (1) play
+
 ## 基本的な使い方
 [説明スライド](https://docs.google.com/presentation/d/e/2PACX-1vT1mbMEAce7wPtNiAS6GiqaizWgwW2jgFR0ZFaZSC2VrczMZ1R3cTQyUSI6W9nwaBuXxxajNl4Gl-xy/pub?start=false&loop=false&delayms=3000) (このタブでスライドが開かれます)
 
@@ -30,14 +40,12 @@
 <img src="Instruction/figures/all_calculation.png" width="55%">
 <img src="Instruction/figures/calculation_example.png" width="30%">
 
-##### (3) 数値
-
-loop文は本文を書くところに変数束縛を使用するとエラーが発生して終了してしまっていることに注意．
-
-また．本リポジトリでビジュアルプログラミング化する際にBlocklyに元から組み込まれているものを流用するため，"loop"は"repeat"として表されている．
-
-##### (4)条件分岐
-
+## Music
+##### (1) play
+ノートナンバーが鍵盤の位置(音の高さ)を表し，指定した音の長さ(秒)だけノートナンバーの音が鳴る．
+ノートナンバーの入力は，小数で入れても．自動で少数第一位で四捨五入される．
+音の長さの入力は，整数で入れていても自動で「.0」がコードエリアで付け足されるため実行には問題ない．
+<img src="Instruction/figures/play_block.png" width="55%">
 
 ##### (5)配列
 
