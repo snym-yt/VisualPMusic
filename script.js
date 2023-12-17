@@ -47,6 +47,12 @@ function translatePlay(code){
 }
 
 function myUpdateFunction(event) {
+  // if (typeof PR === 'undefined') {
+  //   // Google Code Prettifyが未定義の場合、ライブラリを読み込む
+  //   var prettifyScript = document.createElement('script');
+  //   prettifyScript.src = 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js';
+  //   document.head.appendChild(prettifyScript);
+  // }  
   var code = Blockly.JavaScript.workspaceToCode(workspace);
 
   code = translateLoop(code);
@@ -54,10 +60,14 @@ function myUpdateFunction(event) {
   code = translatePlay(code)
 
   document.getElementById('code').innerHTML = '<pre class="prettyprint lang-js" style="margin: 0px"><span style="font-size:1.1em">' + code + '</span></pre>';
-  PR.prettyPrint();
+  // PR.prettyPrint();
   backupBlocks();
+
+  
 }
 workspace.addChangeListener(myUpdateFunction);
+
+
 
 
 function backupBlocks() {
