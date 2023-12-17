@@ -63,11 +63,26 @@ function myUpdateFunction(event) {
   // PR.prettyPrint();
   backupBlocks();
 
-  
+  // writeInstructionsToFile(code);
 }
 workspace.addChangeListener(myUpdateFunction);
 
+// function writeInstructionsToFile(code) {
+//   var instructionsFilePath = 'instructions.txt';
 
+//   // Blobを作成し、FileWriterを使用してファイルに書き込む
+//   var blob = new Blob([code], { type: 'text/plain' });
+//   var writer = new FileWriter();
+
+//   writer.onerror = function (e) {
+//     console.error('Error writing to instructions.txt', e);
+//   };
+
+//   writer.onwriteend = function () {
+//     console.log('Successfully wrote to instructions.txt');
+//   };
+//   writer.write(instructionsFilePath, blob);
+// }
 
 
 function backupBlocks() {
@@ -109,7 +124,8 @@ markdown_editer.html(markdown_html);
   
 // 比較演算子（=，<>，<，<=，>，>=）をそのまま置換する
 function getHtml(selector) {
-  let markdown_text = $(selector).html();
+  // $(selector)で取得した要素が存在しない場合、空の文字列を返す
+  let markdown_text = $(selector).html() || '';
   // let markdown_text = document.querySelectorAll(selector)[1].innerHTML;
   markdown_text = markdown_text.replace(/&lt;/g, "<");
   markdown_text = markdown_text.replace(/&gt;/g, ">");
