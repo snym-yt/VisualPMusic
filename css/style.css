@@ -5,7 +5,7 @@
     overflow-wrap: break-word;
     overflow-x: auto; /* 横スクロール可能にする */
     max-width: 1064px; /* 任意の横幅を指定 */
-    max-height: 300px; /* 任意の縦幅を指定 */
+    max-height: 365px; /* 任意の縦幅を指定 */
     border: 1px solid #ccc; /* 枠線を追加（任意） */
     padding: 10px; /* 任意の余白を指定 */
 }

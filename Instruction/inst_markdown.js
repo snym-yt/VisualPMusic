@@ -12,6 +12,9 @@
   (4) 演算(計算)
 [3]Music
   (1) play
+  (2) gauss
+  (3) weibul
+  (4) randwalk
 
 ## 基本的な使い方
 [説明スライド](https://docs.google.com/presentation/d/e/2PACX-1vT1mbMEAce7wPtNiAS6GiqaizWgwW2jgFR0ZFaZSC2VrczMZ1R3cTQyUSI6W9nwaBuXxxajNl4Gl-xy/pub?start=false&loop=false&delayms=3000) (このタブでスライドが開かれます)
@@ -47,40 +50,30 @@
 音の長さの入力は，整数で入れていても自動で「.0」がコードエリアで付け足されるため実行には問題ない．
 <img src="Instruction/figures/play_block.png" width="55%">
 
-##### (5)配列
+##### (2) gauss
+引数にとったパラメータから[ガウス分布](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83)を作成し，そのガウス分布からランダムに音を生成する．
+<img src="Instruction/figures/gauss_block.png" width="55%">
+<img src="Instruction/figures/gauss_graph.png" width="65%">
 
-配列の要素は型が一致していなくてもよい．
+
+##### (3) weibul
+引数に取ったパラメータから[ワイブル分布](https://poncotty.com/2020/03/28/%E3%83%AF%E3%82%A4%E3%83%96%E3%83%AB%E5%88%86%E5%B8%83/)を作成し，そのワイブル分布からランダムに音を生成する．
+他の確率音楽関数と違って，一度に生成できる音の数は１のみ．
+<img src="Instruction/figures/weibul_block.png" width="55%">
+<img src="Instruction/figures/weibul_graph.png" width="65%">
+
+##### (4) randwalk
+ガウス分布から音高の変化値を抽出し，現在の音高に加えていく．
+この時に用いるガウス分布はこちらがすでに設定している．
+<img src="Instruction/figures/randwalk_block.png" width="55%">
+<img src="Instruction/figures/randomwalk.png" width="55%">
+
 
 
 [Blocklyの配列のWiki](https://github.com/google/blockly/wiki/Lists)
 「create empty list」，「create list with」，「length of」のみ実装．
 
 
-
-### 組み込み関数(確率音楽)：確率音楽関数
-
-##### (1)gauss
-
-引数にとったパラメータから[ガウス分布](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83)を作成し，そのガウス分布からランダムに音を生成する．
-
-
-##### (2)weibul
-
-引数に取ったパラメータから[ワイブル分布](https://poncotty.com/2020/03/28/%E3%83%AF%E3%82%A4%E3%83%96%E3%83%AB%E5%88%86%E5%B8%83/)を作成し，そのワイブル分布からランダムに音を生成する．他の確率音楽関数と違って，一度に生成できる音の数は１のみ．引数が4つは多いと判断したため．
-
-
-
-位置パラメータの値を1~5に制限しているのは，weibul関数の知識がない人が位置パラメータの値を大きく取り過ぎてノートナンバーが以上に高くなるのを防ぐため．
-
-##### (3)randwalk
-
-ガウス分布から音高の変化値を抽出し，現在の音高に加えていく．
-
-
-
-### 組み込み関数(音生成)
-
-##### (1)play
 
 
 ### 組み込み関数(その他)
