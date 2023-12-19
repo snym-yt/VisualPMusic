@@ -5,7 +5,7 @@
     var text = `
 ## 目次
 [1] 基本的な使い方
-[2] Common
+[2] General
   (1) 数値
   (2) 条件分岐(if文)
   (3) [不]等号/不等式
@@ -15,11 +15,14 @@
   (2) gauss
   (3) weibul
   (4) randwalk
+[4]Loops
+  (1) repaet ?? times
+  (2) repeat while (until)
 
 ## 基本的な使い方
 [説明スライド](https://docs.google.com/presentation/d/e/2PACX-1vT1mbMEAce7wPtNiAS6GiqaizWgwW2jgFR0ZFaZSC2VrczMZ1R3cTQyUSI6W9nwaBuXxxajNl4Gl-xy/pub?start=false&loop=false&delayms=3000) (このタブでスライドが開かれます)
 
-## Common
+## General
 ##### (1) 数値
 数字で値を入れることが出来る．
 小数，負の数も入れられるが，このブロック一つだけで「2/3」のような分数の形を表現することは出来ない．
@@ -68,40 +71,25 @@
 <img src="Instruction/figures/randwalk_block.png" width="55%">
 <img src="Instruction/figures/randomwalk.png" width="55%">
 
+## Loops
+##### (1) repeat ?? times
+加えているブロックたちを，数字ブロックに書いた数字の分だけ繰り返す．(repeat 10 times -> 10回繰り返す)
+repeat の中に更にrepeat を入れることもできる．
+<img src="Instruction/figures/loop_block1.png" width="20%">
+<img src="Instruction/figures/loop1_example.png" width="55%">
+[play -> gauss -> {weibul -> weibul}] ->  [play -> gauss -> {weibul -> weibul}] ->  [play -> gauss -> {weibul -> weibul}]
+のように命令が実行される．
 
-
-[Blocklyの配列のWiki](https://github.com/google/blockly/wiki/Lists)
-「create empty list」，「create list with」，「length of」のみ実装．
-
-
-
-
-### 組み込み関数(その他)
-
-##### (1)len
-
-文字列の長さや配列の大きさを返す．
-
-
-
-##### (2)first
-
-配列の先頭の要素を取得する．
-
-
-
-##### (3)last
-
-配列の最後尾の要素を取得する．
-
-
-
-##### (4)rest
-
-与えられた配列の最初の要素を取り除いた配列を返す．
-返しているのは新しく作成した残り要素の配列なので，引数に渡された配列自体は変化していない．
-
-
+##### (2) repeat while (until)
+whileのとき，つけた条件が真となっている間，加えているブロックの命令が実行される．
+untilのとき，つけた条件が偽となっている間，加えているブロックの命令が実行される．
+<img src="Instruction/figures/loop_block2.png" width="20%">
+<img src="Instruction/figures/loop2_example.png" width="55%">
+この例では，countが最初0であり，
+   (count(=0) < 3 が真) [gauss -> count+1(=1)]
+-> (count(=1) < 3 が真) [gauss -> count+1(=2)]
+-> (count(=2) < 3 が真) [gauss -> count+1(=3)]
+-> (count(=3) < 3 が偽) [終了]
 
 
 
