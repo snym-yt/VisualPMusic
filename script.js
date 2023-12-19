@@ -20,10 +20,12 @@ window.setTimeout(function () {
 function translateLet(code){
   var DefLetRegex = /([A-Za-z]\w*) = (\d+)/g;
   var DeleteDeclaration = /var .+;\n+/g;
+  var DefChange = /([A-Za-z]\w*) = \(typeof .+ : \d+\) \+ (\d+);/g
 
   // マッチするすべてのforループを置換
   code = code.replace(DefLetRegex, 'let $1 = $2');
   code = code.replace(DeleteDeclaration, '');
+  code = code.replace(DefChange, 'let $1 = $1 + $2;')
 
   return code;
 }
