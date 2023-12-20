@@ -18,6 +18,11 @@
 [4]Loops
   (1) repaet ?? times
   (2) repeat while (until)
+[5]Variables
+  (1) 変数の作り方
+  (2) set
+  (3) change
+  (4) variable
 
 ## 基本的な使い方
 [説明スライド](https://docs.google.com/presentation/d/e/2PACX-1vT1mbMEAce7wPtNiAS6GiqaizWgwW2jgFR0ZFaZSC2VrczMZ1R3cTQyUSI6W9nwaBuXxxajNl4Gl-xy/pub?start=false&loop=false&delayms=3000) (このタブでスライドが開かれます)
@@ -92,6 +97,35 @@ untilのとき，つけた条件が偽となっている間，加えているブ
 -> (count(=3) < 3 が偽) [終了]
 
 
+## Variables
+##### (1) 変数の作り方
+Variableタグを選択する．
+「create variable」ボタンを押すと画面上部にポップアップが表示されるので，そこに変数名を入力する．
+
+変数名の制限は以下の通り．
+・先頭の文字はアルファベットのみ使用できる．
+・先頭以外の文字では，アルファベット，数字，'_'のいずれか
+OK -> a4, b_5, abcde など
+NG -> _c, 4d, e!, ?f など
+<img src="Instruction/figures/Variable_tag.png" width="30%"> <img src="Instruction/figures/create_variable.png" width="33%"> <img src="Instruction/figures/variable_block.png" width="30%">
+
+##### (2) set 
+選択している変数に，つけている数値ブロックの値を代入する．
+<img src="Instruction/figures/set_block.png" width="15%"> <img src="Instruction/figures/set_example.png" width="22%">
+変数のブロック全てに共通しているが，
+変数を複数作っている時にその変数を選ぶことや，変数の名前を変更すること，不要となった変数を消すことも出来る．
+<img src="Instruction/figures/set_example2.png" width="27%">
+
+##### (3) change
+付けられている数値ブロックの値を変数の値に加える．
+下の例では，15であったtest 変数がchange ブロックによって16になる．
+<img src="Instruction/figures/change_block.png" width="20%"> <img src="Instruction/figures/change_example.png" width="22%">
+
+##### (4) variable
+数値ブロックと同じように他のブロックに連結させて，数値として機能する．
+<img src="Instruction/figures/var_block.png" width="10%">
+この例では，3回 play を繰り返す．
+<img src="Instruction/figures/var_example.png" width="40%">
 
 `;
     var html = marked(text);
