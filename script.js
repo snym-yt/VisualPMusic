@@ -149,6 +149,8 @@ function setLanguage(lang) {
   // 言語別のスクリプトのリストを定義
   const scripts = {
     ja: [
+      "CodeBlocks/Japanese/blocks/js/play_block.js",
+      "CodeBlocks/Japanese/generators/play.js",
       "CodeBlocks/Japanese/blocks/js/play_block2.js",
       "CodeBlocks/Japanese/generators/play2.js",
       // "CodeBlocks/Japanese/blocks/js/random_block.js",
@@ -163,6 +165,8 @@ function setLanguage(lang) {
       "CodeBlocks/Japanese/generators/randwalk.js"
     ],
     en: [
+      "CodeBlocks/English/blocks/js/play_block.js",
+      "CodeBlocks/English/generators/play.js",
       "CodeBlocks/English/blocks/js/play_block2.js",
       "CodeBlocks/English/generators/play2.js",
       // "CodeBlocks/English/blocks/js/random_block.js",

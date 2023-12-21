@@ -1,18 +1,18 @@
-Blockly.Blocks['play'] = {
+Blockly.Blocks['play1'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("play");
     this.appendValueInput("Note No.")
         .setCheck("Number")
-        .appendField("Note No.");
+        .appendField("Note number (Integer)");
     this.appendValueInput("during")
         .setCheck("Number")
-        .appendField("during");
+        .appendField("during (float)");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("ノートナンバーの音をduringの間流す");
+    this.setColour(0);
+ this.setTooltip("Play the sound of the note number during 'during'.");
  this.setHelpUrl("");
   }
 };
