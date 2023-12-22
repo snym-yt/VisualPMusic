@@ -1,16 +1,20 @@
-Blockly.Blocks['gauss'] = {
+Blockly.Blocks['gauss1'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("gauss");
+
     this.appendValueInput("number_of_note")
         .setCheck("Number")
-        .appendField("number of note");
-    this.appendValueInput("ave_of_noteNo")
+        .appendField("音の数 (自然数)");
+
+    this.appendValueInput("ave_of_noteno")
         .setCheck("Number")
-        .appendField("ave of Note No.");
+        .appendField("ノートナンバーの平均値 (自然数)");
+
     this.appendValueInput("var")
         .setCheck("Number")
-        .appendField("var");
+        .appendField("分散 (小数)");
+
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
