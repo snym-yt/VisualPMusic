@@ -55,8 +55,11 @@
 ##### (1) play
 ノートナンバーが鍵盤の位置(音の高さ)を表し，指定した音の長さ(秒)だけノートナンバーの音が鳴る．
 ノートナンバーの入力は，小数で入れても．自動で少数第一位で四捨五入される．
+(数値ブロックをはめるタイプでは小数点以下切り捨て)
 音の長さの入力は，整数で入れていても自動で「.0」がコードエリアで付け足されるため実行には問題ない．
 <img src="Instruction/figures/play_block.png" width="55%">
+<img src="Instruction/figures/play_block2.png" width="55%">
+<img src="Instruction/figures/play_example.png" width="55%">
 
 ##### (2) gauss
 引数にとったパラメータから[ガウス分布](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83)を作成し，そのガウス分布からランダムに音を生成する．
