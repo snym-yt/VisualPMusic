@@ -40,10 +40,10 @@ function translateLoop(code){
 }
 
 function translatePlay(code){
-  var playRegex = /play\((.+), (\d+)\)/g;
+  var playRegex = /play\((\d+)\.*(\d*), (\d+)\)/g;
 
   // マッチするすべてのforループを置換
-  code = code.replace(playRegex, 'play($1, $2.0)');
+  code = code.replace(playRegex, 'play($1, $3.0)');
 
   return code;
 }
