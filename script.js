@@ -41,9 +41,15 @@ function translateLoop(code){
 
 function translatePlay(code){
   var playRegex = /play\((\d+)\.*(\d*), (\d+)\)/g;
-
-  // マッチするすべてのforループを置換
   code = code.replace(playRegex, 'play($1, $3.0)');
+  return code;
+}
+
+function translateGauss(code){
+  var gaussRegex = /gauss\((\d+)\.*(\d*), (\d+)\.*(\d*), (.*)\)/g;
+  var varRegex = /gauss\((.*), (.*), (\d+)\)/g;
+  code = code.replace(gaussRegex, 'gauss($1, $3, $5)');
+  code = code.replace(varRegex, 'gauss($1, $2, $3.0)');
 
   return code;
 }
@@ -59,7 +65,8 @@ function myUpdateFunction(event) {
 
   code = translateLoop(code);
   code = translateLet(code);
-  code = translatePlay(code)
+  code = translatePlay(code);
+  code = translateGauss(code);
 
   document.getElementById('code').innerHTML = '<pre class="prettyprint lang-js" style="margin: 0px"><span style="font-size:1.1em">' + code + '</span></pre>';
   // PR.prettyPrint();

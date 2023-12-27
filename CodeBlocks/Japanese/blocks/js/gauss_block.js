@@ -9,7 +9,7 @@ Blockly.Blocks['gauss1'] = {
 
     this.appendValueInput("ave_of_noteno")
         .setCheck("Number")
-        .appendField("ノートナンバーの平均値 (自然数)");
+        .appendField("ノートナンバー平均値 (自然数)");
 
     this.appendValueInput("var")
         .setCheck("Number")
