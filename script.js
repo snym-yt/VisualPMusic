@@ -107,12 +107,32 @@ function restoreBlocks() {
 }
 
 function runCode() {
+  // 無限ループのコードがあっても1000で強制ストップ
   window.LoopTrap = 1000;
   Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
   var code = Blockly.JavaScript.workspaceToCode(workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     eval(code);
+  } catch (e) {
+    alert('Bad code: ' + e);
+  }
+}
+
+function copyCode() {
+  var code = Blockly.JavaScript.workspaceToCode(workspace);
+  code = translateLoop(code);
+  code = translateLet(code);
+  code = translatePlay(code);
+  code = translateGauss(code);
+  try {
+    var textArea = document.createElement('textarea');
+    textArea.value = code;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Code copied to clipboard!');
   } catch (e) {
     alert('Bad code: ' + e);
   }
