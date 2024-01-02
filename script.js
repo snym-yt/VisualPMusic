@@ -21,21 +21,17 @@ function translateLet(code){
   var DefLetRegex = /([A-Za-z]\w*) = (\d+)/g;
   var DeleteDeclaration = /var .+;\n+/g;
   var DefChange = /([A-Za-z]\w*) = \(typeof .+ : \d+\) \+ (\d+);/g
-
   // マッチするすべてのforループを置換
   code = code.replace(DefLetRegex, 'let $1 = $2');
   code = code.replace(DeleteDeclaration, '');
   code = code.replace(DefChange, 'let $1 = $1 + $2;')
-
   return code;
 }
 
 function translateLoop(code){
   var forLoopRegex = /for\s*\(\s*var\s+\w+\s*=\s*\d+\s*;\s*\w+\s*<\s*(\d+)\s*;\s*\w+\s*\+\+\s*\)\s*{/g;
-
   // マッチするすべてのforループを置換
   code = code.replace(forLoopRegex, 'loop($1){');
-
   return code;
 }
 
@@ -50,7 +46,23 @@ function translateGauss(code){
   var varRegex = /gauss\((.*), (.*), (\d+)\)/g;
   code = code.replace(gaussRegex, 'gauss($1, $3, $5)');
   code = code.replace(varRegex, 'gauss($1, $2, $3.0)');
+  return code;
+}
 
+function translateWeibul(code){
+  var shapeRegex = /weibul\((\d+), (.*)\)/g;
+  var scaleRegex = /weibul\((.*), (\d+)\.(\d*)\)/g;
+  code = code.replace(shapeRegex, 'weibul($1.0, $2)');
+  code = code.replace(scaleRegex, 'weibul($1, $2)');
+  return code;
+}
+
+function codeTranslate(code){
+  code = translateLoop(code);
+  code = translateLet(code);
+  code = translatePlay(code);
+  code = translateGauss(code);
+  code = translateWeibul(code);
   return code;
 }
 
@@ -62,11 +74,7 @@ function myUpdateFunction(event) {
   //   document.head.appendChild(prettifyScript);
   // }  
   var code = Blockly.JavaScript.workspaceToCode(workspace);
-
-  code = translateLoop(code);
-  code = translateLet(code);
-  code = translatePlay(code);
-  code = translateGauss(code);
+  code = codeTranslate(code);
 
   document.getElementById('code').innerHTML = '<pre class="prettyprint lang-js" style="margin: 0px"><span style="font-size:1.1em">' + code + '</span></pre>';
   // PR.prettyPrint();
@@ -121,10 +129,7 @@ function runCode() {
 
 function copyCode() {
   var code = Blockly.JavaScript.workspaceToCode(workspace);
-  code = translateLoop(code);
-  code = translateLet(code);
-  code = translatePlay(code);
-  code = translateGauss(code);
+  code = codeTranslate(code);
   try {
     var textArea = document.createElement('textarea');
     textArea.value = code;
