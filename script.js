@@ -57,12 +57,19 @@ function translateWeibul(code){
   return code;
 }
 
+function translateRandwalk(code){
+  var randwalkRegex = /randwalk\((\d*)(\.*\d*), (\d*)(\.*\d*)\)/g;
+  code = code.replace(randwalkRegex, 'randwalk($1, $3)');
+  return code;
+}
+
 function codeTranslate(code){
   code = translateLoop(code);
   code = translateLet(code);
   code = translatePlay(code);
   code = translateGauss(code);
   code = translateWeibul(code);
+  code = translateRandwalk(code);
   return code;
 }
 
@@ -197,6 +204,8 @@ function setLanguage(lang) {
       "CodeBlocks/Japanese/generators/weibul.js",
       "CodeBlocks/Japanese/blocks/js/weibul_block2.js",
       "CodeBlocks/Japanese/generators/weibul2.js",
+      "CodeBlocks/Japanese/blocks/js/randwalk_block1.js",
+      "CodeBlocks/Japanese/generators/randwalk1.js",
       "CodeBlocks/Japanese/blocks/js/randwalk_block.js",
       "CodeBlocks/Japanese/generators/randwalk.js"
     ],
@@ -217,6 +226,8 @@ function setLanguage(lang) {
       "CodeBlocks/English/generators/weibul.js",
       "CodeBlocks/English/blocks/js/weibul_block2.js",
       "CodeBlocks/English/generators/weibul2.js",
+      "CodeBlocks/English/blocks/js/randwalk_block1.js",
+      "CodeBlocks/English/generators/randwalk1.js",
       "CodeBlocks/English/blocks/js/randwalk_block.js",
       "CodeBlocks/English/generators/randwalk.js"
     ]
