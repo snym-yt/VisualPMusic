@@ -1,4 +1,4 @@
-Blockly.Blocks['weibul'] = {
+Blockly.Blocks['weibul1'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("weibul");
