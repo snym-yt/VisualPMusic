@@ -86,27 +86,9 @@ function myUpdateFunction(event) {
   document.getElementById('code').innerHTML = '<pre class="prettyprint lang-js" style="margin: 0px"><span style="font-size:1.1em">' + code + '</span></pre>';
   // PR.prettyPrint();
   backupBlocks();
-
-  // writeInstructionsToFile(code);
 }
 workspace.addChangeListener(myUpdateFunction);
 
-// function writeInstructionsToFile(code) {
-//   var instructionsFilePath = 'instructions.txt';
-
-//   // Blobを作成し、FileWriterを使用してファイルに書き込む
-//   var blob = new Blob([code], { type: 'text/plain' });
-//   var writer = new FileWriter();
-
-//   writer.onerror = function (e) {
-//     console.error('Error writing to instructions.txt', e);
-//   };
-
-//   writer.onwriteend = function () {
-//     console.log('Successfully wrote to instructions.txt');
-//   };
-//   writer.write(instructionsFilePath, blob);
-// }
 
 
 function backupBlocks() {
@@ -119,6 +101,10 @@ function backupBlocks() {
 function restoreBlocks() {
   var xml = Blockly.Xml.textToDom(window.localStorage[KEY]);
     Blockly.Xml.domToWorkspace(xml, workspace);
+}
+
+function playMusic(){
+
 }
 
 function runCode() {
@@ -192,10 +178,6 @@ function setLanguage(lang) {
       "CodeBlocks/Japanese/generators/play.js",
       "CodeBlocks/Japanese/blocks/js/play_block2.js",
       "CodeBlocks/Japanese/generators/play2.js",
-      // "CodeBlocks/Japanese/blocks/js/random_block.js",
-      // "CodeBlocks/Japanese/generators/random.js",
-      // "CodeBlocks/Japanese/blocks/js/custom_test_block.js",
-      // "CodeBlocks/Japanese/generators/custom_test.js",
       "CodeBlocks/Japanese/blocks/js/gauss_block.js",
       "CodeBlocks/Japanese/generators/gauss.js",
       "CodeBlocks/Japanese/blocks/js/gauss_block2.js",
@@ -214,10 +196,6 @@ function setLanguage(lang) {
       "CodeBlocks/English/generators/play.js",
       "CodeBlocks/English/blocks/js/play_block2.js",
       "CodeBlocks/English/generators/play2.js",
-      // "CodeBlocks/English/blocks/js/random_block.js",
-      // "CodeBlocks/English/generators/random.js",
-      // "CodeBlocks/English/blocks/js/custom_test_block.js",
-      // "CodeBlocks/English/generators/custom_test.js",
       "CodeBlocks/English/blocks/js/gauss_block.js",
       "CodeBlocks/English/generators/gauss.js",
       "CodeBlocks/English/blocks/js/gauss_block2.js",
