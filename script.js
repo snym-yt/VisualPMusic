@@ -103,9 +103,39 @@ function restoreBlocks() {
     Blockly.Xml.domToWorkspace(xml, workspace);
 }
 
-function playMusic(){
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+const ctx = new AudioContext();
+const gainNode = ctx.createGain();
+// 音量の初期値を0.5にする
+gainNode.gain.value = 0.5;
+let oscillator;
+let isPlaying = false;
 
+function playMusic(){
+    // 再生中なら二重に再生されないようにする
+    if (isPlaying) return;
+    oscillator = ctx.createOscillator();
+    oscillator.type = "sine"; // sine, square, sawtooth, triangleがある
+    oscillator.frequency.setValueAtTime(440, ctx.currentTime); // 440HzはA4(4番目のラ)
+    oscillator.connect(gainNode);
+    oscillator.connect(ctx.destination);
+    oscillator.start();
+    isPlaying = true;
+    // 1秒後に音を止める
+    setTimeout(() => {
+      stopMusic();
+    }, 1000);
 }
+
+function stopMusic() {
+  if (!isPlaying) return;
+  oscillator?.stop();
+  isPlaying = false;
+}
+
+// function play(note Note){
+
+// }
 
 function runCode() {
   // 無限ループのコードがあっても1000で強制ストップ
