@@ -107,7 +107,7 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 const ctx = new AudioContext();
 const gainNode = ctx.createGain();
 // 音量の初期値を0.5にする
-gainNode.gain.value = 0.5;
+gainNode.gain.value = 0.2;
 let oscillator;
 let isPlaying = false;
 
@@ -117,11 +117,11 @@ function playMusic(){
     oscillator = ctx.createOscillator();
     oscillator.type = "sine"; // sine, square, sawtooth, triangleがある
     oscillator.frequency.setValueAtTime(440, ctx.currentTime); // 440HzはA4(4番目のラ)
-    oscillator.connect(gainNode);
-    oscillator.connect(ctx.destination);
+    oscillator.connect(gainNode).connect(ctx.destination);
     oscillator.start();
     isPlaying = true;
     // 1秒後に音を止める
+    gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + 1);
     setTimeout(() => {
       stopMusic();
     }, 1000);
