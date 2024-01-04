@@ -111,20 +111,29 @@ gainNode.gain.value = 0.2;
 let oscillator;
 let isPlaying = false;
 
-function playMusic(){
+async function playMusic(){
     // 再生中なら二重に再生されないようにする
     if (isPlaying) return;
+    try{
+      const response = await fetch('/getMelody');
+      const melody = await response.text();
+      // melody.txtの内容を表示
+      console.log('Melody:', melody);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+
     oscillator = ctx.createOscillator();
     oscillator.type = "sine"; // sine, square, sawtooth, triangleがある
     oscillator.frequency.setValueAtTime(440, ctx.currentTime); // 440HzはA4(4番目のラ)
     oscillator.connect(gainNode).connect(ctx.destination);
     oscillator.start();
     isPlaying = true;
-    // 1秒後に音を止める
-    gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + 1);
-    setTimeout(() => {
-      stopMusic();
-    }, 1000);
+    oscillator.frequency.setValueAtTime(640, ctx.currentTime + 1); 
+    gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + 2);
+    // setTimeout(() => {
+    //   stopMusic();
+    // }, 1000);
 }
 
 function stopMusic() {
