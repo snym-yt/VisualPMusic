@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "visualpmusic",
+  "description": "## Purpose PMusicをビジュアルプログラミングにする．",
+  "version": "1.0.0",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
