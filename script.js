@@ -115,7 +115,7 @@ async function playMusic(){
     // 再生中なら二重に再生されないようにする
     if (isPlaying) return;
     try{
-      const response = await fetch('/getMelody');
+      const response = await fetch('/docs/melody.txt');
       const melody = await response.text();
       // melody.txtの内容を表示
       console.log('Melody:', melody);
@@ -131,9 +131,9 @@ async function playMusic(){
     isPlaying = true;
     oscillator.frequency.setValueAtTime(640, ctx.currentTime + 1); 
     gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + 2);
-    // setTimeout(() => {
-    //   stopMusic();
-    // }, 1000);
+    setTimeout(() => {
+      stopMusic();
+    }, 2000);
 }
 
 function stopMusic() {
