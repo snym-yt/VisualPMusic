@@ -104,10 +104,6 @@ function restoreBlocks() {
 }
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
-const ctx = new AudioContext();
-const gainNode = ctx.createGain();
-// 音量の初期値を0.5にする
-gainNode.gain.value = 0.2;
 let oscillator;
 let isPlaying = false;
 
@@ -122,6 +118,9 @@ async function playMusic(){
     } catch (error) {
       console.error('Error:', error);
     }
+    ctx = new AudioContext();
+    const gainNode = ctx.createGain();
+    gainNode.gain.value = 0.2;
 
     oscillator = ctx.createOscillator();
     oscillator.type = "sine"; // sine, square, sawtooth, triangleがある
@@ -140,6 +139,7 @@ function stopMusic() {
   if (!isPlaying) return;
   oscillator?.stop();
   isPlaying = false;
+  oscillator = null;
 }
 
 // function play(note Note){
